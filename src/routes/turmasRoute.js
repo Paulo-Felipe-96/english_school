@@ -1,11 +1,19 @@
-const { Router } = require('express')
-const TurmaController = require('../controllers/TurmaController')
- 
-const router = Router()
+const { Router } = require("express");
+const {
+  pegaTodasAsTurmas,
+  pegaUmaTurma,
+  criaTurma,
+  atualizaTurma,
+  apagaTurma,
+} = require("../controllers/TurmaController");
+
+const router = Router();
+
 router
- .get('/turmas', TurmaController.pegaTodasAsTurmas)
- .get('/turmas/:id', TurmaController.pegaUmaTurma)
- .post('/turmas', TurmaController.criaTurma)
- .put('/turmas/:id', TurmaController.atualizaTurma)
- .delete('/turmas/:id', TurmaController.apagaTurma)
-module.exports = router
+  .get("/turmas", pegaTodasAsTurmas)
+  .get("/turmas/:id", pegaUmaTurma)
+  .post("/turmas", criaTurma)
+  .put("/turmas/:id", atualizaTurma)
+  .delete("/turmas/:id", apagaTurma);
+
+module.exports = router;

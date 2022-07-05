@@ -1,16 +1,27 @@
-const { Router } = require('express')
-const PessoaController = require('../controllers/PessoaController')
+const { Router } = require("express");
+const {
+  pegaTodasAsPessoas,
+  pegaUmaPessoa,
+  criaPessoa,
+  atualizaPessoa,
+  apagaPessoa,
+  pegaUmaMatricula,
+  criaMatricula,
+  atualizaMatricula,
+  apagaMatricula,
+} = require("../controllers/PessoaController");
 
-const router = Router()
+const router = Router();
 
-router.get('/pessoas', PessoaController.pegaTodasAsPessoas)
-router.get('/pessoas/:id', PessoaController.pegaUmaPessoa)
-router.post('/pessoas', PessoaController.criaPessoa)
-router.put('/pessoas/:id', PessoaController.atualizaPessoa)
-router.delete('/pessoas/:id', PessoaController.apagaPessoa)
-router.get('/pessoas/:estudanteId/matricula/:matriculaId',  PessoaController.pegaUmaMatricula)
-router.post('/pessoas/:estudanteId/matricula', PessoaController.criaMatricula)
-router.put('/pessoas/:estudanteId/matricula/:matriculaId',  PessoaController.atualizaMatricula)
-router.delete('/pessoas/:estudanteId/matricula/:matriculaId',  PessoaController.apagaMatricula)
+router
+  .get("/pessoas", pegaTodasAsPessoas)
+  .get("/pessoas/:id", pegaUmaPessoa)
+  .post("/pessoas", criaPessoa)
+  .put("/pessoas/:id", atualizaPessoa)
+  .delete("/pessoas/:id", apagaPessoa)
+  .get("/pessoas/:estudanteId/matricula/:matriculaId", pegaUmaMatricula)
+  .post("/pessoas/:estudanteId/matricula", criaMatricula)
+  .put("/pessoas/:estudanteId/matricula/:matriculaId", atualizaMatricula)
+  .delete("/pessoas/:estudanteId/matricula/:matriculaId", apagaMatricula);
 
-module.exports = router
+module.exports = router;
