@@ -2,14 +2,14 @@
   "name": "orm-sequelize",
   "version": "1.0.0",
   "description": "",
-  "main": "./api/index.js",
+  "main": "./src/app.js",
   "scripts": {
-    "start": "nodemon ./api/index.js"
+    "dev": "nodemon ./src/app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.19.0",
+    "dotenv": "^16.0.1",
     "express": "^4.17.1",
     "mysql2": "^2.1.0",
     "path": "^0.12.7",
