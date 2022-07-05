@@ -5,7 +5,7 @@ const {
   criaTurma,
   atualizaTurma,
   apagaTurma,
-} = require("../controllers/TurmaController");
+} = require("../controllers/SchoolClassController");
 
 const router = Router();
 
